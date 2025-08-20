@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connecting…</title>
+
+  <!-- ✅ Replace with your AdSense client ID -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-xxxxxxxxxxxxxxxx"
+          crossorigin="anonymous"></script>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #e0f2fe, #f8fafc); /* Light gradient */
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: #1e293b;
+    }
+    .box {
+      text-align: center;
+      padding: 30px;
+      border-radius: 16px;
+      background: #ffffff;
+      border: 1px solid rgba(0,0,0,0.08);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      width: min(420px, 92%);
+    }
+    .spinner {
+      margin: 10px auto 20px;
+      width: 50px;
+      height: 50px;
+      border: 5px solid rgba(0,0,0,0.1);
+      border-top-color: #2563eb;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    h1 { font-size: 1.4rem; margin: 0 0 8px; }
+    p { margin: 4px 0 16px; opacity: 0.8; font-size: 0.95rem; }
+    .ad {
+      margin: 18px 0;
+      padding: 12px;
+      border: 1px dashed rgba(0,0,0,0.2);
+      border-radius: 10px;
+      background: #f9fafb;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 12px 20px;
+      border-radius: 10px;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      border: none;
+      opacity: 0.6;
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+    .btn.active {
+      opacity: 1;
+      pointer-events: auto;
+      background: #3b82f6;
+      box-shadow: 0 4px 12px rgba(37,99,235,0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="spinner" id="spinner"></div>
+    <h1 id="status">Connecting to the server…</h1>
+    <p id="timer">Please wait 20 seconds</p>
+
+    <!-- ✅ Replace data-ad-slot with your real slot ID -->
+    <div class="ad">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-xxxxxxxxxxxxxxxx"
+           data-ad-slot="1234567890"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+
+    <a href="New Text Document1.html" id="continueBtn" class="btn">Continue</a>
+  </div>
+
+  <script>
+    // Load AdSense
+    try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch(e) {}
+
+    let timeLeft = 20;
+    const timerEl = document.getElementById("timer");
+    const statusEl = document.getElementById("status");
+    const spinner = document.getElementById("spinner");
+    const btn = document.getElementById("continueBtn");
+
+    const countdown = setInterval(() => {
+      timeLeft--;
+      if (timeLeft > 0) {
+        timerEl.textContent = `Please wait ${timeLeft} seconds`;
+      } else {
+        clearInterval(countdown);
+        timerEl.textContent = "You may now continue.";
+        statusEl.textContent = "Connected ✅";
+        spinner.style.display = "none";   // hide spinner when connected
+        btn.classList.add("active");
+      }
+    }, 1000);
+  </script>
+</body>
+</html>

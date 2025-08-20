@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Loan Application Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root{
+      --primary:#4a3aff;
+      --ink:#222;
+      --muted:#666;
+      --line:#e5e7eb;
+      --bg:#f8fafc;
+      --card:#ffffff;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--ink);
+      background:var(--bg);
+    }
+    header{
+      background:linear-gradient(90deg,var(--primary),#7b5fff);
+      color:#fff;
+      padding:28px 16px;
+      text-align:center;
+    }
+    header h1{margin:0 0 6px;font-size:28px}
+    header p{margin:0;opacity:.95}
+    .wrap{
+      max-width:980px;
+      margin:24px auto 40px;
+      padding:0 16px;
+    }
+    form{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:20px;
+      box-shadow:0 6px 18px rgba(0,0,0,.06);
+    }
+    .section{
+      padding:14px 0 6px;
+      border-top:1px dashed var(--line);
+      margin-top:14px;
+    }
+    .section:first-of-type{
+      border-top:none;
+      margin-top:0;
+      padding-top:0;
+    }
+    .section h2{
+      font-size:18px;
+      margin:0 0 12px;
+      color:var(--primary);
+      letter-spacing:.2px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:14px 16px;
+    }
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:14px 16px;
+    }
+    .row{display:flex;gap:16px}
+    .row > *{flex:1}
+    label{
+      display:block;
+      font-size:13px;
+      color:var(--muted);
+      margin:2px 0 6px;
+    }
+    input, select, textarea{
+      width:100%;
+      padding:11px 12px;
+      border:1px solid var(--line);
+      border-radius:8px;
+      font-size:14px;
+      outline:none;
+      background:#fff;
+    }
+    input:focus, select:focus, textarea:focus{
+      border-color:var(--primary);
+      box-shadow:0 0 0 3px rgba(74,58,255,.12);
+    }
+    textarea{min-height:90px;resize:vertical}
+    small.help{display:block;color:#888;margin-top:4px}
+    .files{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 16px}
+    .actions{
+      display:flex;gap:12px;justify-content:flex-end;margin-top:18px;padding-top:10px;border-top:1px solid var(--line)
+    }
+    button{
+      border:none; cursor:pointer; font-weight:700; padding:12px 18px; border-radius:10px; font-size:14px;
+    }
+    .primary{background:var(--primary); color:#fff}
+    .ghost{background:#eef2ff; color:#2b2b2b}
+    .muted{font-size:13px; color:#777}
+    .req{color:#c026d3}
+    @media (max-width:860px){
+      .grid, .grid-3, .files{grid-template-columns:1fr}
+      .row{flex-direction:column}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Applying for a Loan to SLG</h1>
+  <p>Fill the form below and our team will reach out shortly. They might call you for work.</p>
+</header>
+
+<div class="wrap">
+  <form action="https://api.web3forms.com/submit" method="POST">
+    <!-- PERSONAL DETAILS -->
+    <div class="section">
+      <h2>Personal Details</h2>
+      <div class="grid">
+
+
+
+        <input type="hidden" name="access_key" value="6cdebaeb-7fdb-43ce-8251-8d9c8f3c7028">
+
+
+        <div>
+          <label for="fname">Full Name <span class="req">*</span></label>
+          <input id="fname" name="full_name" type="text" placeholder="e.g., Sachin Gharde" autocomplete="name" required />
+        </div>
+        <div>
+          <label for="email">Email <span class="req">*</span></label>
+          <input id="email" name="email" type="email" placeholder="name@example.com" autocomplete="email" required />
+        </div>
+        <div>
+          <label for="phone">Phone <span class="req">*</span></label>
+          <input id="phone" name="phone" type="tel" inputmode="numeric" pattern="(\+?\d{1,4}[- ]?)?\d{10}" placeholder="+91 9000011111" autocomplete="tel" required />
+          <small class="help">Enter 10 digits (with optional country code).</small>
+        </div>
+        <div>
+          <label for="dob">Date of Birth <span class="req">*</span></label>
+          <input id="dob" name="dob" type="date" required />
+        </div>
+        <div>
+          <label for="pan">PAN (Optional)</label>
+          <input id="pan" name="pan" type="text" pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}" placeholder="ABCDE1234F" title="Format: 5 letters, 4 digits, 1 letter" />
+        </div>
+        <div>
+          <label for="aadhaar">Aadhaar (Optional)</label>
+          <input id="aadhaar" name="aadhaar" type="text" inputmode="numeric" pattern="\d{12}" placeholder="12-digit Aadhaar" />
+        </div>
+      </div>
+
+      <div class="grid">
+        <div>
+          <label for="address">Current Address <span class="req">*</span></label>
+          <textarea id="address" name="address" placeholder="House/Flat, Street, Area" required></textarea>
+        </div>
+        <div class="grid">
+          <div>
+            <label for="city">City <span class="req">*</span></label>
+            <input id="city" name="city" type="text" required />
+          </div>
+          <div>
+            <label for="state">State <span class="req">*</span></label>
+            <input id="state" name="state" type="text" required />
+          </div>
+          <div>
+            <label for="pincode">PIN Code <span class="req">*</span></label>
+            <input id="pincode" name="pincode" type="text" inputmode="numeric" pattern="\d{6}" placeholder="6-digit PIN" required />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EMPLOYMENT & INCOME -->
+    <div class="section">
+      <h2>Employment & Income</h2>
+      <div class="grid">
+        <div>
+          <label for="employment">Employment Type <span class="req">*</span></label>
+          <select id="employment" name="employment" required>
+            <option value="">Select</option>
+            <option>Salaried</option>
+            <option>Self-Employed</option>
+            <option>Business Owner</option>
+            <option>Student</option>
+            <option>Retired</option>
+          </select>
+        </div>
+        <div>
+          <label for="company">Company / Business Name</label>
+          <input id="company" name="company" type="text" placeholder="Your employer or business" />
+        </div>
+        <div>
+          <label for="experience">Experience (Years)</label>
+          <input id="experience" name="experience" type="number" min="0" step="0.5" placeholder="e.g., 3.5" />
+        </div>
+        <div>
+          <label for="income">Monthly Net Income (₹) <span class="req">*</span></label>
+          <input id="income" name="income" type="number" min="0" step="1000" placeholder="e.g., 50000" required />
+        </div>
+      </div>
+    </div>
+
+    <!-- LOAN DETAILS -->
+    <div class="section">
+      <h2>Loan Details</h2>
+      <div class="grid">
+        <div>
+          <label for="loan-type">Loan Type <span class="req">*</span></label>
+          <select id="loan-type" name="loan_type" required>
+            <option value="">Select</option>
+            <option>Home Loan</option>
+            <option>Car Loan</option>
+            <option>Business Loan</option>
+            <option>Personal Loan</option>
+            <option>Education Loan</option>
+            <option>Gold Loan</option>
+            <option>Loan Against Property</option>
+          </select>
+        </div>
+        <div>
+          <label for="amount">Desired Amount (₹) <span class="req">*</span></label>
+          <input id="amount" name="amount" type="number" min="10000" step="1000" placeholder="e.g., 300000" required />
+          <small class="help">Minimum ₹10,000.</small>
+        </div>
+        <div>
+          <label for="tenure">Preferred Tenure <span class="req">*</span></label>
+          <select id="tenure" name="tenure" required>
+            <option value="">Select</option>
+            <option>6 Months</option>
+            <option>12 Months</option>
+            <option>24 Months</option>
+            <option>36 Months</option>
+            <option>48 Months</option>
+            <option>60 Months</option>
+            <option>> 60 Months</option>
+          </select>
+        </div>
+        <div>
+          <label for="purpose">Purpose of Loan</label>
+          <input id="purpose" name="purpose" type="text" placeholder="e.g., Home renovation, working capital" />
+        </div>
+      </div>
+    </div>
+
+
+    <!-- CONSENT -->
+    <div class="section">
+      <h2>Declarations & Consent</h2>
+      <div>
+        <label><input type="checkbox" name="consent_check" required /> I confirm the information provided is accurate.</label><br />
+        <label><input type="checkbox" name="credit_check" required /> I authorize credit checks for loan processing.</label><br />
+        <label><input type="checkbox" name="contact_ok" /> I agree to be contacted via phone/SMS/email.</label>
+      </div>
+      <p class="muted">Your data is protected and used only to evaluate your loan application.</p>
+    </div>
+
+    <!-- ACTIONS -->
+    <div class="actions">
+      <button type="reset" class="ghost">Clear</button>
+      <button type="submit" class="primary">Submit Application</button>
+    </div>
+  </form>
+
+  <p class="muted" style="margin-top:10px;">Note: Fields marked with <span class="req">*</span> are required.</p>
+  <p></p>
+</div>
+
+</body>
+</html>

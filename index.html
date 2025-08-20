@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SLG - Fast & Secure Loans</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin:0;
+      font-family:Arial, sans-serif;
+      background:#f9f9f9;
+      color:#333;
+    }
+    .product-card {
+      padding:20px;
+      border-radius:10px;
+      width:100%;
+      max-width:280px;
+      box-shadow:0 2px 6px rgba(0,0,0,0.1);
+      transition: all 0.2s ease;
+      cursor: pointer;
+      flex: 1 1 250px;
+    }
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow:0 6px 15px rgba(0,0,0,0.2);
+    }
+    .product-card:active {
+      transform: scale(0.95);
+      box-shadow:0 2px 8px rgba(0,0,0,0.3);
+    }
+
+    /* Responsive fixes */
+    .nav {
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .nav-links {
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+    h1 {
+      font-size:32px;
+    }
+    @media (max-width:600px) {
+      .nav { flex-direction:column; align-items:flex-start; }
+      h1 { font-size:24px; }
+      p { font-size:16px; }
+      .products-container {
+        flex-direction:column;
+        align-items:center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <div class="nav" style="background:#fff;border-bottom:1px solid #ddd;padding:12px 20px;position:sticky;top:0;">
+    <div style="font-weight:bold;font-size:24px;color:#4a3aff;">SLG public limited</div>
+    <div class="nav-links">
+      <a href="#products" style="color:#333;text-decoration:none;">Products</a>
+      <a href="#benefits" style="color:#333;text-decoration:none;">Benefits</a>
+      <a href="#about" style="color:#333;text-decoration:none;">About</a>
+      <a href="#contact" style="color:#333;text-decoration:none;">contact</a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <div style="background:linear-gradient(to right,#4a3aff,#7b5fff);color:#fff;text-align:center;padding:60px 20px;">
+    <h1>Fast & Secure Loans for Your Needs</h1>
+    <p>Personal, Business, and Home Loans with low interest rates.</p>
+    <a href="New Text Document (2).html" style="background:#fff;color:#4a3aff;padding:12px 24px;border-radius:6px;text-decoration:none;font-weight:bold;">Apply Now</a>
+  </div>
+
+  <!-- Products -->
+  <div id="products" style="padding:40px 20px;text-align:center;">
+    <h2 style="font-size:28px;margin-bottom:20px;">Our Loan Products</h2>
+    <div class="products-container" style="display:flex;flex-wrap:wrap;justify-content:center;gap:20px;">
+      
+      <div class="product-card" style="background:#e3f2fd;">
+        <h3>🏠 Home Loan</h3>
+        <p>Low interest rates and flexible EMIs for your dream home.</p>
+      </div>
+
+      <div class="product-card" style="background:#fce4ec;">
+        <h3>🚗 Car Loan</h3>
+        <p>Drive your dream car with easy financing options.</p>
+      </div>
+
+      <div class="product-card" style="background:#e8f5e9;">
+        <h3>💼 Business Loan</h3>
+        <p>Quick approval loans to grow your business faster.</p>
+      </div>
+
+      <div class="product-card" style="background:#fff9c4;">
+        <h3>🌍 Land Loan</h3>
+        <p>Finance your land purchase with flexible repayment.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Benefits -->
+  <div id="benefits" style="background:#f1f1ff;padding:40px 20px;text-align:center;">
+    <h2 style="font-size:28px;margin-bottom:20px;">Why Choose Us?</h2>
+    <ul style="list-style:none;padding:0;font-size:18px;line-height:2;">
+      <li>✔️ Low Interest Rates</li>
+      <li>✔️ Quick Approval Process</li>
+      <li>✔️ Flexible Repayment Options</li>
+      <li>✔️ 100% Secure & Trusted</li>
+    </ul>
+  </div>
+
+  <!-- About Section (placed below Why Choose Us) -->
+  <div id="about" style="padding:50px 20px;text-align:center;background:#ffffff;">
+    <h2 style="font-size:28px;margin-bottom:20px;">About Us</h2>
+    <p style="max-width:800px;margin:0 auto;font-size:18px;line-height:1.6;">
+      At <strong>SLG Public Limited</strong>, we are dedicated to helping individuals and businesses achieve their goals through easy and affordable financing. 
+      With years of experience in the financial sector, our mission is to provide transparent, secure, and flexible loan options tailored to your needs. 
+      Whether it’s buying your dream home, expanding your business, or securing land for the future, we’re here to support you every step of the way.
+    </p>
+  </div>
+
+  
+
+  <!-- Contact Section -->
+  <div id="contact" style="background:#000;color:#fff;padding:20px;text-align:center;font-size:14px;">
+    <div style="margin-bottom:8px;">📞 +91 98765 43210 &nbsp; | &nbsp; ✉️ support@yourloan.co</div>
+  </div>
+  
+
+</body>
+</html>
